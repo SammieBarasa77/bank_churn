@@ -72,7 +72,7 @@ import io
 df = pd.read_csv(io.BytesIO(uploaded['Bank Customer Churn Prediction.csv']))
 df
 ```
-![Data Preview]()
+![Data Preview](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/dataset_prevw.png)
 
 Handle Missing Values
 ```python
@@ -96,6 +96,7 @@ for column in df.columns:
 # Verify if missing values are handled
 print(df.isnull().sum())
 ```
+![Missing Values](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/missing_value_verification.png)
 
 4. Exploratory Data Analysis (EDA)
 A. Customer Demographics
@@ -113,6 +114,7 @@ sns.boxplot(x=churn_column, y='age', data=df)
 plt.title('Churn Rate by Age')
 plt.show()
 ```
+![Age](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_age.png)
 
 Gender: Gender-based churn analysis
 ```python
@@ -122,6 +124,8 @@ gender_churn.plot(kind='bar', stacked=True)
 plt.title('Churn Rate by Gender')
 plt.show()
 ```
+![Gender](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_gender.png)
+
 Geography: Churn trends by regions
 ```python
 # Geography
@@ -130,6 +134,7 @@ geography_churn.plot(kind='bar', stacked=True)
 plt.title('Churn Rate by Geography')
 plt.show()
 ```
+![Geography](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_geog.png)
 
 B. Account Tenure and Balance
 
@@ -140,8 +145,9 @@ plt.figure(figsize=(8, 6))
 sns.boxplot(x=churn_column, y='tenure', data=df)
 plt.title('Churn Rate by Tenure')
 plt.show()
-
 ```
+![Tenure](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_tenure.png)
+
 Balance: Correlation between balance and churn
 ```python
 # Balance
@@ -150,6 +156,8 @@ sns.boxplot(x=churn_column, y='balance', data=df)
 plt.title('Churn Rate by Balance')
 plt.show()
 ```
+![Balance](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_balance.png)
+
 C. Financial Behavior
 
 Credit Score: Relationship between credit score and churn
@@ -160,6 +168,8 @@ sns.boxplot(x=churn_column, y='credit_score', data=df)
 plt.title('Churn Rate by Credit Score')
 plt.show()
 ```
+![CreditScore](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_credit_score.png)
+
 Number of Products: Impact of product holdings on churn
 ```python
 # Number of Products
@@ -168,6 +178,8 @@ product_churn.plot(kind='bar', stacked=True)
 plt.title('Churn Rate by Number of Products')
 plt.show()
 ```
+![No. Of Pdts](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_pdt_no.png)
+
 Estimated Salary: Effect of income levels on churn
 ```python
 # Estimated Salary
@@ -177,6 +189,7 @@ plt.title('Churn Rate by Estimated Salary')
 plt.show()
 
 ```
+![Estimated Salary](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/churn_by_estimeated_salary.png)
 
 5. Feature Engineering
 
@@ -199,6 +212,7 @@ df['RiskScore'] = (
 )
 print(df)
 ```
+![Feature Engineering](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/feature_eng.png)
 
 6. Model Building and Evaluation
 
@@ -276,6 +290,12 @@ for model_name, metrics in results.items():
   print(f"Confusion Matrix:\n{metrics['confusion_matrix']}")
   print("-" * 30)
 ```
+
+![Logistic Reg](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/model_logistic.png)
+![Decision Tree](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/model_decision.png)
+![Random Forest](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/model_random.png)
+![XGBoost](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/model_xgb.png)
+
 7. Feature Importance Analysis
 
 Analyzing feature importance for tree-based models
@@ -295,6 +315,9 @@ if 'Random Forest' in results:
   plt.ylabel('Feature')
   plt.show()
 ```
+
+![Random Int](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/intepreting_churn_random.png)
+
 ```python
 # 2. XGBoost
 
@@ -311,6 +334,7 @@ if 'XGBoost' in results:
   plt.ylabel('Feature')
   plt.show()
 ```
+![XGBoost Int](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/intepreting_churn_xgb.png)
 
 The Best-performing model
 
@@ -318,6 +342,7 @@ The XGBoost model prioritizes the most predictive features more clearly, suggest
 
 Visualizing the top features influencing churn
 
+(High Risk Customers)
 ```python
 # Churn Probability
 # Use the best-performing model to predict churn probabilities for the test set.(XGBoost in this case)
@@ -336,6 +361,8 @@ if 'XGBoost' in results:
   print("High-Risk Customers:")
 high_risk_customers
 ```
+![High Risk Customers](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/high_risk_customer.png)
+
 8. Customer Retention Strategies
    
 Findings
