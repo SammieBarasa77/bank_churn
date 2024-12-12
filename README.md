@@ -1,6 +1,6 @@
 # Machine Learning Project: Bank Customer Churn Analysis
 
-![Logo](https://github.com/SammieBarasa77/bank_churn/blob/main/assets/images/Screenshot%202024-11-23%20222057.png)
+![Logo](https://github.com/SammieBarasa77/walmart_sales/blob/main/assets/images/cover_final.png)
 
 # Table of Contents
 
